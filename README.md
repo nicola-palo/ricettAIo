@@ -2,10 +2,6 @@
 
 RicettAIo è una semplice e moderna applicazione web che genera ricette a partire da una lista di ingredienti, utilizzando la potenza dell'API di Google Gemini.
 
-![Screenshot dell'applicazione RicettAIo](https://via.placeholder.com/800x400.png?text=Interfaccia+di+RicettAIo)
-
-*Suggerimento: Sostituisci l'URL sopra con un link a uno screenshot reale della tua applicazione una volta caricata su GitHub.*
-
 ---
 
 ## ✨ Funzionalità
