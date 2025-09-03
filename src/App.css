@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  overflow: hidden; /* Impedisce lo scorrimento globale */
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Layout di base e stato iniziale centrato */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente il form iniziale */
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  transition: all 0.5s ease-in-out;
+}
+
+.left-panel {
+  width: 100%;
+  max-width: 700px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+
+.right-panel {
+  display: none; /* Nascosto all'inizio */
+}
+
+/* Stili per il layout diviso */
+.App.layout-split {
+  justify-content: space-between;
+  align-items: flex-start; /* Allinea i pannelli in alto */
+  gap: 40px;
+}
+
+.App.layout-split .left-panel {
+  max-width: 550px;
+  flex-shrink: 0; /* Impedisce al pannello di rimpicciolirsi */
+}
+
+.App.layout-split .right-panel {
+  display: flex; /* Usa flexbox per gestire lo spazio interno */
+  flex-direction: column;
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  box-sizing: border-box;
+  max-height: 100%; /* Occupa l'altezza massima del contenitore */
+}
+
+
+/* Stili dei componenti interni */
+.app-header {
+  text-align: center;
+  color: #1a253c;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-form textarea, .api-key-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dfe3e8;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-form textarea:focus, .api-key-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.input-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input-form button {
+  padding: 15px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.input-form button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.input-form button:not(:disabled):hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.recipe-display {
+  flex-grow: 1; /* Fa in modo che l'area della ricetta si espanda */
+  overflow-y: auto; /* ★ LA REGOLA CHIAVE: Abilita lo scorrimento interno */
+  line-height: 1.7;
+  padding-right: 15px; /* Spazio per la barra di scorrimento */
+}
+
+.recipe-display h3 {
+  font-size: 1.5em;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.recipe-display strong {
+  font-weight: 700;
+}
+
+.recipe-display ul {
+  padding-left: 20px;
+}
+
+.recipe-display li { margin-bottom: 8px; }
+
+.placeholder-message, .error-message, .loading-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #7f8c8d;
+  font-style: italic;
+  height: 100%;
+}
+
+.error-message { color: #e74c3c; font-weight: bold; }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
