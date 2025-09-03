@@ -179,3 +179,48 @@ body, html, #root {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Media Queries per la responsività */
+@media (max-width: 992px) {
+  #root {
+    padding: 20px; /* Riduci il padding su schermi più piccoli */
+    height: auto; /* Permetti all'altezza di adattarsi al contenuto */
+    overflow-y: auto; /* Abilita lo scorrimento verticale su #root */
+  }
+
+  body, html {
+    overflow: auto; /* Assicurati che lo scorrimento sia possibile */
+  }
+
+  .App.layout-split {
+    flex-direction: column; /* Impila i pannelli verticalmente */
+    align-items: center; /* Centra i pannelli */
+    gap: 20px; /* Riduci lo spazio tra i pannelli */
+  }
+
+  .App.layout-split .left-panel,
+  .App.layout-split .right-panel {
+    max-width: 100%; /* I pannelli occupano tutta la larghezza */
+    width: 100%;
+    flex-shrink: 1; /* Permetti ai pannelli di restringersi se necessario */
+  }
+
+  .App.layout-split .right-panel {
+     /* L'altezza si adatta al contenuto, non più fissa */
+    max-height: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #root {
+    padding: 15px;
+  }
+
+  .left-panel, .App.layout-split .right-panel {
+    padding: 20px; /* Riduci il padding interno sui telefoni */
+  }
+
+  .app-header h1 {
+    font-size: 2em; /* Riduci la dimensione del titolo */
+  }
+}
