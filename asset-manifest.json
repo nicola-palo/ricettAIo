@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ricettAIo/static/css/main.90805159.css",
+    "main.js": "/ricettAIo/static/js/main.45f21911.js",
+    "static/js/453.f853e788.chunk.js": "/ricettAIo/static/js/453.f853e788.chunk.js",
+    "index.html": "/ricettAIo/index.html",
+    "main.90805159.css.map": "/ricettAIo/static/css/main.90805159.css.map",
+    "main.45f21911.js.map": "/ricettAIo/static/js/main.45f21911.js.map",
+    "453.f853e788.chunk.js.map": "/ricettAIo/static/js/453.f853e788.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90805159.css",
+    "static/js/main.45f21911.js"
+  ]
+}
